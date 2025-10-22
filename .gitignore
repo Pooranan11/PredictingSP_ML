@@ -1,18 +1,66 @@
-# macOS
+# === macOS ===
 .DS_Store
 
-# Python
+# === Python ===
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.egg-info/
+*.dist-info/
+*.so
+*.a
+*.o
+*.out
+*.log
+*.sqlite3
+*.db
 
-# Virtual envs
+# === Environnements virtuels ===
+.venv/
+.venv-*/
 venv/
+venv-*/
+env/
+env-*/
 venv_tf/
+.venv_tf/
+ENV/
+env.bak/
 .env
 .env.*
 
-# Logs
-*.log
+# === Outils et caches ===
+.pytest_cache/
+.mypy_cache/
+.pyre/
+.dmypy.json
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+
+# === Notebooks ===
+.ipynb_checkpoints/
+
+# === Éditeurs ===
+.vscode/
+.idea/
+.history/
+
+# === Build / Dist ===
+build/
+dist/
+*.egg
+*.whl
+
+# === Données temporaires ===
+tmp/
+temp/
+outputs/
+data/
+
+# === Autres fichiers divers ===
+*.swp
+*.bak
+*.tmp
