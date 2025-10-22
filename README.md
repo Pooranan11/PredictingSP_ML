@@ -34,5 +34,43 @@ PredictingSP_ML/
    cd PredictingSP_ML
 
 2. **Créer et activer un environnement virtuel (Python 3.11 recommandé) :**
+    ```bash
     python3.11 -m venv .venv-tf
     source .venv-tf/bin/activate
+
+3. **Installer les dépendances :**
+    ```bash
+    pip install -r requirements.txt
+
+4. **Exécuter le script principal :**
+    ```bash
+    python predict_nvda_lstm.py
+
+(Vous pouvez aussi lancer python test_tf_gpu.py pour vérifier la bonne installation de TensorFlow.)
+
+### 5. Paramètres importants
+
+Ticker : modifiable dans predict_nvda_lstm.py → ticker = 'NVDA'.
+Période d’analyse : modifiable via les arguments start et end dans yf.download().
+Longueur des séquences : sequence_length = 60 (modifiable).
+
+### 6. Résultats attendus
+
+Affichage de la progression d’entraînement (Epoch X/84 - loss: ...).
+Prédiction d’un prix futur basé sur les 60 derniers jours.
+Possibilité d’étendre à d’autres titres (AAPL, MSFT, TSLA, etc.).
+
+### 7. Limitations et avertissements
+
+⚠️ Ce projet est destiné uniquement à des fins éducatives.
+Les résultats ne doivent en aucun cas être considérés comme des conseils d’investissement.
+Les performances du modèle dépendent de nombreux facteurs : la période, les données, les hyperparamètres, etc.
+
+### 8. Contribution
+
+Les contributions sont les bienvenues !
+Vous pouvez :
+ajouter de nouveaux tickers ;
+améliorer l’architecture du modèle (plusieurs couches LSTM, Dropout, etc.) ;
+ajouter des métriques ou des visualisations.
+Proposez vos idées via une Issue ou une Pull Request.
