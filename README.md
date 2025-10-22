@@ -1,5 +1,84 @@
 # PredictingSP_ML
 
+## 🇬🇧 English Version
+
+### 1. Overview  
+This project aims to **predict the evolution of a stock’s price** (in this example: NVIDIA – NVDA) using a **Deep Learning model based on LSTM (Long Short-Term Memory)**.  
+The script downloads historical data via `yfinance`, normalizes it, creates time sequences, trains a recurrent neural network, and generates future price predictions.
+
+### 2. Features  
+- Automatic stock data download via **Yahoo Finance** (`yfinance`).  
+- Price normalization using **MinMaxScaler** (from `scikit-learn`).  
+- Creation of 60-day sliding windows to predict the next day’s price.  
+- Construction of an **LSTM model** using `tensorflow.keras.models.Sequential`.  
+- Training progress display with **loss** at each epoch.  
+- Environment check for TensorFlow (GPU / CPU) via `test_tf_gpu.py`.  
+- Includes test and experimental scripts.
+
+### 3. Repository Structure  
+
+PredictingSP_ML/
+├── .gitignore
+├── README.md ← ce fichier
+├── requirements.txt ← dépendances Python
+├── predict_nvda_lstm.py ← script principal de prédiction NVDA
+├── predict_test.py ← script d’expérimentation
+├── test.py ← script de test simple
+├── test_tf_gpu.py ← test de compatibilité TensorFlow
+└── ...
+
+### 4. Installation & Execution    
+1. **Clone the repository:**  
+   
+   ```bash
+   git clone https://github.com/Pooranan11/PredictingSP_ML.git
+   cd PredictingSP_ML
+
+2. **Create and activate a virtual environment (Python 3.11 recommended):**
+    
+    ```bash
+    python3.11 -m venv .venv-tf
+    source .venv-tf/bin/activate
+
+3. **Install dependencies:**
+    
+    ```bash
+    pip install -r requirements.txt
+
+4. **Run the main script:**
+    ```bash
+    python predict_nvda_lstm.py
+
+(You can also run python test_tf_gpu.py to check that TensorFlow is correctly installed.)
+
+### 5. Key Parameters
+
+Ticker: can be changed in predict_nvda_lstm.py → ticker = 'NVDA'.
+Date range: editable through the start and end arguments in yf.download().
+Sequence length: sequence_length = 60 (modifiable).
+
+### 6. Expected Results
+
+Displays training progress (Epoch X/84 - loss: ...).
+Predicts a future price based on the previous 60 days.
+Easily extendable to other tickers (AAPL, MSFT, TSLA, etc.).
+
+### 7. Limitations & Disclaimer
+
+⚠️ This project is intended for educational purposes only.
+The results must not be interpreted as investment advice.
+Model performance depends on many factors: data range, dataset quality, and hyperparameters.
+
+### 8. Contribution
+
+Contributions are welcome!
+You can:
+add new stock tickers,
+improve the model architecture (multiple LSTM layers, dropout, etc.),
+add metrics or visualization features.
+Feel free to open an Issue or submit a Pull Request with your suggestions.
+
+
 ## 🇫🇷 Version française
 
 ### 1. Présentation  
@@ -74,3 +153,4 @@ ajouter de nouveaux tickers ;
 améliorer l’architecture du modèle (plusieurs couches LSTM, Dropout, etc.) ;
 ajouter des métriques ou des visualisations.
 Proposez vos idées via une Issue ou une Pull Request.
+
