@@ -108,20 +108,24 @@ PredictingSP_ML/
 
 ### 4. Installation & exécution  
 1. **Cloner le dépôt :**  
+   
    ```bash
    git clone https://github.com/Pooranan11/PredictingSP_ML.git
    cd PredictingSP_ML
 
 2. **Créer et activer un environnement virtuel (Python 3.11 recommandé) :**
+    
     ```bash
     python3.11 -m venv .venv-tf
     source .venv-tf/bin/activate
 
 3. **Installer les dépendances :**
+    
     ```bash
     pip install -r requirements.txt
 
 4. **Exécuter le script principal :**
+    
     ```bash
     python predict_nvda_lstm.py
 
